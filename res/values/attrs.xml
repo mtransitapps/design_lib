@@ -56,6 +56,12 @@
         <attr name="headerLayout" format="reference"/>
     </declare-styleable>
 
+    <declare-styleable name="ForegroundLinearLayout">
+        <attr name="android:foreground" />
+        <attr name="android:foregroundGravity" />
+        <attr name="foregroundInsidePadding" format="boolean" />
+    </declare-styleable>
+
     <declare-styleable name="TabLayout">
         <attr name="tabIndicatorColor" format="color"/>
         <attr name="tabIndicatorHeight" format="dimension"/>
@@ -161,6 +167,14 @@
         <attr name="errorEnabled" format="boolean"/>
         <!-- TextAppearance of any error message displayed -->
         <attr name="errorTextAppearance" format="reference"/>
+        <!-- Whether the layout is laid out as if the character counter will be displayed -->
+        <attr name="counterEnabled" format="boolean"/>
+        <!-- The max length to display in the character counter -->
+        <attr name="counterMaxLength" format="integer" />
+        <!-- TextAppearance of the character counter -->
+        <attr name="counterTextAppearance" format="reference"/>
+        <!-- TextAppearance of the character counter when the text is longer than the max -->
+        <attr name="counterOverflowTextAppearance" format="reference"/>
         <attr name="android:textColorHint"/>
         <!-- Whether to animate hint state changes. -->
         <attr name="hintAnimationEnabled" format="boolean"/>
@@ -201,6 +215,10 @@
                  reached the end of it's scroll range, the remainder of this view will be scrolled
                  into view. -->
             <flag name="enterAlwaysCollapsed" value="0x8"/>
+
+            <!-- Upon a scroll ending, if the view is only partially visible then it will be
+                 snapped and scrolled to it's closest edge. -->
+            <flag name="snap" value="0x10"/>
         </attr>
 
         <!-- An interpolator to use when scrolling this View. Only takes effect when View
