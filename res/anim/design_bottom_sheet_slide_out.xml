@@ -14,6 +14,16 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
 -->
-<resources>
-    <dimen name="design_navigation_padding_top_default">24dp</dimen>
-</resources>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+     android:duration="@integer/bottom_sheet_slide_duration"
+     android:interpolator="@android:anim/accelerate_interpolator">
+
+    <translate
+            android:fromYDelta="0"
+            android:toYDelta="20%p"/>
+
+    <alpha
+            android:fromAlpha="1.0"
+            android:toAlpha="0.0"/>
+
+</set>
