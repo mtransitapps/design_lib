@@ -1,4 +1,4 @@
-design_lib
+design_lib [ARCHIVED]
 ==========
 
-Our current version of the Android Design Support library.
+From a time before proper dependencies management and Support/AndroidX library split.
